@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+		<!--version>2.1.8.RELEASE</version-->
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<!-- GroupId and ArtifactId needs to be changed as per project -->
+	<!-- This creates package com.controller which contains java class HolidayParty_new-->
+	<groupId>com.controller</groupId>
+	<artifactId>MovieTicketBooking</artifactId>
+	
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- Optional -->
+	<packaging>jar</packaging>
+	
+	
+	
+	
+	<!-- This needs to be changed as per project name -->
+	<name>MovieTicketBooking</name>
+	<description>Demo project for Spring Boot</description>
+
+	
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+	
+		<!-- Provides auto configuraton and DispatcherServlet -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- Devtools below allows all modifications or code logic while running on servers except for adding a new dependency-->
+		<!-- Whenever new dependency is added,we need to stop and start the entire server -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+        		<exclusion>
+        			<groupId>org.junit.vintage</groupId>
+        			<artifactId>junit-vintage-engine</artifactId>
+        		</exclusion>
+        	</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>5.1.7.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- To enable jsp support in embedded tomcat server! -->
+		<!-- Whenever new dependency is added,we need to stop and start the entire server -->
+		<!-- If We use @ Response body then it is not required. Else for creating views using jsp
+		     this dependency is required for deploying server -->
+		<dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+		
+		<!-- For displaying Todos in a table using Java Std. Tags Lib.(JSTL) Tags -->
+		<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        
+        <dependency>
+        	<groupId>javax.servlet</groupId>
+        	<artifactId>servlet-api</artifactId>
+        	<version>2.5</version>
+        	<scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+        	<groupId>javax.servlet.jsp</groupId>
+        	<artifactId>jsp-api</artifactId>
+        	<version>2.1</version>
+        	<scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+        	<groupId>taglibs</groupId>
+        	<artifactId>standard</artifactId>
+        	<version>1.1.2</version>
+        </dependency>
+        
+        <dependency>
+        	<groupId>org.springframework</groupId>
+        	<artifactId>spring-test</artifactId>
+        	<version>5.1.7.RELEASE</version>
+        	<scope>test</scope>
+        </dependency>
+		
+		
+		
+		<!--3 Extra Bootstrapping dependencies below.-->
+			
+		<!-- For designing buttons class and fields - Not form: as we obtain this from spring in built jstl -->
+         <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+        
+        <!-- for using calendar picker in target date field -->
+        
+        <dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-datepicker</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+        
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+						<path>/</path>
+						<contextReloadable>true</contextReloadable>
+					</configuration>
+			</plugin-->
+		</plugins>
+	</build>
+
+</project>
